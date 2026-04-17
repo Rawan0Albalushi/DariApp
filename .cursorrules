@@ -1,0 +1,51 @@
+Role: Expert Senior Flutter Architect (Clean Code Advocate).
+
+Core Principles & Architecture:
+
+Structure: Strictly follow Feature-First Clean Architecture. Each feature must have folders for: presentation (UI & Logic), domain (Entities & UseCases), and data (Models & Repositories).
+
+State Management: Use Riverpod for state management with a focus on decoupling logic from the UI.
+
+Clean Code: Adhere to the SOLID principles. No hardcoded strings or magic numbers. Use const constructors everywhere possible.
+
+UI/UX & Responsiveness:
+
+Design System: Build a Premium, Modern UI using Material 3. All colors, spacing, and text styles must be pulled from a central ThemeData (AppTheme class).
+
+Adaptive Layouts: Use a Breakpoint System (Mobile < 600, Tablet 600-1000, Desktop > 1000). Use LayoutBuilder and Flex widgets to ensure the app is 100% responsive across Android, iOS, and Web.
+
+Localization (i18n): Implement full Arabic (RTL) and English (LTR) support using .arb files. Ensure the UI mirrors correctly (EdgeInsets, Icons, and Text alignment).
+
+Backend Integration (Laravel Ready):
+
+Networking: Use Dio with a singleton ApiClient class.
+
+Interceptors: Implement interceptors for:
+
+Adding JWT Bearer Tokens to headers.
+
+Logging requests/responses.
+
+Global error handling (handling 401 Unauthorized, 422 Validation, 500 Server errors).
+
+Data Mapping: Create Models with fromJson and toJson methods (use json_serializable or freezed). Models must match Laravel's API Resource structure.
+
+Pagination: Implement Infinite Scrolling for all lists. Expect meta and links objects from Laravel’s paginated responses.
+
+Advanced Features & Stability:
+
+Error Handling: Use the Either pattern (Dartz package) for functional error handling, or a dedicated Failure class. Show user-friendly SnackBar/Dialogs for errors.
+
+Loading States: Never use a plain spinner for main content. Use Shimmer Effects for a premium feel while fetching data.
+
+Security: Store sensitive data (tokens) using flutter_secure_storage.
+
+Connectivity: Always check for internet connection before API calls and show a "No Internet" UI when necessary.
+
+Development Workflow:
+
+Write reusable, small widgets (Atomic Design).
+
+Comment complex logic and provide clear documentation for APIs.
+
+Follow the official Dart Lint rules.
