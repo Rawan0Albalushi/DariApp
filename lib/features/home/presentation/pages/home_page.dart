@@ -2,6 +2,8 @@ import 'package:dari/features/home/presentation/widgets/category_icons_section.d
 import 'package:dari/features/home/presentation/widgets/custom_header.dart';
 import 'package:dari/features/home/presentation/widgets/featured_properties_list.dart';
 import 'package:dari/features/home/presentation/widgets/map_section.dart';
+import 'package:dari/features/home/presentation/pages/all_properties_page.dart';
+import 'package:dari/features/home/presentation/pages/property_details_page.dart';
 import 'package:dari/features/home/presentation/widgets/section_title.dart';
 import 'package:dari/features/account/presentation/pages/account_page.dart';
 import 'package:flutter/material.dart';
@@ -47,7 +49,7 @@ class _HomePageState extends State<HomePage> {
 
     final List<FeaturedPropertyData> properties = <FeaturedPropertyData>[
       FeaturedPropertyData(
-        title: l10n.forRent,
+        title: l10n.propertyNameLuxuryApartment,
         subtitle: 'Al Mouj, Muscat',
         priceLabel: 'OMR 350',
         badgeLabel: l10n.forRent,
@@ -56,7 +58,7 @@ class _HomePageState extends State<HomePage> {
         imageGradient: const [Color(0xFF5D89B3), Color(0xFF1E3A5F)],
       ),
       FeaturedPropertyData(
-        title: l10n.forSale,
+        title: l10n.propertyNameModernVilla,
         subtitle: 'Al Mouj, Muscat',
         priceLabel: 'OMR 250',
         badgeLabel: l10n.forSale,
@@ -65,7 +67,7 @@ class _HomePageState extends State<HomePage> {
         imageGradient: const [Color(0xFFB68C60), Color(0xFF6B4E2E)],
       ),
       FeaturedPropertyData(
-        title: l10n.forSale,
+        title: l10n.propertyNameFamilyHouse,
         subtitle: 'Al Khuwair, Muscat',
         priceLabel: 'OMR 420',
         badgeLabel: l10n.forSale,
@@ -78,11 +80,10 @@ class _HomePageState extends State<HomePage> {
     final bool isAccountSelected = _selectedBottomIndex == _accountTabIndex;
 
     return Scaffold(
-      body: SafeArea(
-        child: isAccountSelected
-            ? const AccountPage()
-            : LayoutBuilder(
-                builder: (BuildContext context, BoxConstraints constraints) {
+      body: isAccountSelected
+          ? const AccountPage()
+          : LayoutBuilder(
+              builder: (BuildContext context, BoxConstraints constraints) {
                   final bool isDesktop = constraints.maxWidth >= 1000;
                   final bool isTablet =
                       constraints.maxWidth >= 600 && !isDesktop;
@@ -107,12 +108,49 @@ class _HomePageState extends State<HomePage> {
                           scanButtonLabel: l10n.scanBuilding,
                         ),
                         const SizedBox(height: 20),
-                        SectionTitle(title: l10n.featuredPropertiesTitle),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Expanded(
+                              child: SectionTitle(
+                                title: l10n.featuredPropertiesTitle,
+                              ),
+                            ),
+                            TextButton(
+                              style: TextButton.styleFrom(
+                                foregroundColor: Theme.of(
+                                  context,
+                                ).colorScheme.primary,
+                                textStyle: Theme.of(context)
+                                    .textTheme
+                                    .labelLarge
+                                    ?.copyWith(fontWeight: FontWeight.w800),
+                              ),
+                              onPressed: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute<void>(
+                                    builder: (BuildContext context) =>
+                                        const AllPropertiesPage(),
+                                  ),
+                                );
+                              },
+                              child: Text(l10n.viewAllProperties),
+                            ),
+                          ],
+                        ),
                         const SizedBox(height: 12),
                         FeaturedPropertiesList(
                           properties: properties,
                           bedsLabel: l10n.beds,
                           bathsLabel: l10n.baths,
+                          onPropertyTap: (FeaturedPropertyData property) {
+                            Navigator.of(context).push(
+                              MaterialPageRoute<void>(
+                                builder: (BuildContext context) =>
+                                    PropertyDetailsPage(property: property),
+                              ),
+                            );
+                          },
                         ),
                       ],
                     ),
@@ -178,9 +216,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   );
-                },
-              ),
-      ),
+              },
+            ),
       bottomNavigationBar: _HomeBottomNavigationBar(
         homeLabel: l10n.bottomHome,
         ordersLabel: l10n.bottomOrders,
@@ -247,7 +284,9 @@ class _HomeBottomNavigationBar extends StatelessWidget {
             ) {
               final bool isSelected = states.contains(WidgetState.selected);
               return IconThemeData(
-                color: isSelected ? selectedColor : colorScheme.onSurfaceVariant,
+                color: isSelected
+                    ? selectedColor
+                    : colorScheme.onSurfaceVariant,
                 size: isSelected ? 26 : 24,
               );
             }),
@@ -256,7 +295,9 @@ class _HomeBottomNavigationBar extends StatelessWidget {
             ) {
               final bool isSelected = states.contains(WidgetState.selected);
               return Theme.of(context).textTheme.labelMedium!.copyWith(
-                color: isSelected ? selectedColor : colorScheme.onSurfaceVariant,
+                color: isSelected
+                    ? selectedColor
+                    : colorScheme.onSurfaceVariant,
                 fontWeight: isSelected ? FontWeight.w800 : FontWeight.w500,
               );
             }),

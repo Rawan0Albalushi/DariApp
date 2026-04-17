@@ -63,6 +63,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get forRent => 'For Rent';
 
   @override
+  String get propertyNameLuxuryApartment => 'Luxury Apartment';
+
+  @override
+  String get propertyNameModernVilla => 'Modern Villa';
+
+  @override
+  String get propertyNameFamilyHouse => 'Family House';
+
+  @override
   String get beds => 'Beds';
 
   @override
@@ -190,4 +199,68 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get accountMoreOpened => 'More options opened';
+
+  @override
+  String get propertyDetailsTitle => 'Property Details';
+
+  @override
+  String get priceStartingFrom => 'Starting from';
+
+  @override
+  String get contactAgent => 'Contact Agent';
+
+  @override
+  String get propertyOverviewTitle => 'Overview';
+
+  @override
+  String get propertyOverviewText => 'A premium unit in a strategic location, designed for daily comfort with practical interior distribution and close access to essential services.';
+
+  @override
+  String get featuresLabel => 'Features';
+
+  @override
+  String get amenityPool => 'Swimming Pool';
+
+  @override
+  String get amenityParking => 'Parking';
+
+  @override
+  String get amenityGym => 'Gym';
+
+  @override
+  String get amenitySecurity => '24/7 Security';
+
+  @override
+  String get bookVisit => 'Book a Visit';
+
+  @override
+  String get propertyAreaValue => '145 m²';
+
+  @override
+  String get allPropertiesPageTitle => 'All properties';
+
+  @override
+  String get viewAllProperties => 'View all';
+
+  @override
+  String get allPropertiesSearchHint => 'Search by name or district';
+
+  @override
+  String get filterAllProperties => 'All';
+
+  @override
+  String get districtAlMouj => 'Al Mouj, Muscat';
+
+  @override
+  String get districtAlKhuwair => 'Al Khuwair, Muscat';
+
+  @override
+  String get districtQurum => 'Qurum, Muscat';
+
+  @override
+  String get districtBausher => 'Bausher, Muscat';
+
+  @override
+  String get allPropertiesEmpty =>
+      'No properties match your filters or search.';
 }

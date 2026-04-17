@@ -230,7 +230,6 @@ class _AccountPageState extends State<AccountPage> {
                     _ProfileCard(
                       name: _displayName!,
                       email: _email!,
-                      verifiedLabel: l10n.accountVerified,
                       actionLabel: l10n.accountEditProfile,
                       avatarRadius: _profileRadius,
                       cardRadius: _profileCardRadius,
@@ -338,7 +337,6 @@ class _ProfileCard extends StatelessWidget {
   const _ProfileCard({
     required this.name,
     required this.email,
-    required this.verifiedLabel,
     required this.actionLabel,
     required this.onEditPressed,
     required this.avatarRadius,
@@ -348,7 +346,6 @@ class _ProfileCard extends StatelessWidget {
 
   final String name;
   final String email;
-  final String verifiedLabel;
   final String actionLabel;
   final VoidCallback onEditPressed;
   final double avatarRadius;
@@ -436,75 +433,6 @@ class _ProfileCard extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 12),
-          Row(
-            children: <Widget>[
-              Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 10,
-                  vertical: 5,
-                ),
-                decoration: BoxDecoration(
-                  color: colorScheme.secondaryContainer,
-                  borderRadius: BorderRadius.circular(999),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Icon(
-                      Icons.verified_rounded,
-                      size: 16,
-                      color: colorScheme.onSecondaryContainer,
-                    ),
-                    const SizedBox(width: 6),
-                    Text(
-                      verifiedLabel,
-                      style: theme.textTheme.labelMedium?.copyWith(
-                        color: colorScheme.onSecondaryContainer,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(width: 8),
-              Expanded(
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 10,
-                    vertical: 5,
-                  ),
-                  decoration: BoxDecoration(
-                    color: colorScheme.surfaceContainerHighest.withValues(
-                      alpha: 0.7,
-                    ),
-                    borderRadius: BorderRadius.circular(999),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      Icon(
-                        Icons.alternate_email_rounded,
-                        size: 14,
-                        color: colorScheme.onSurfaceVariant,
-                      ),
-                      const SizedBox(width: 6),
-                      Expanded(
-                        child: Text(
-                          email,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: theme.textTheme.labelMedium?.copyWith(
-                            color: colorScheme.onSurfaceVariant,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
           SizedBox(
             width: double.infinity,
             child: FilledButton.icon(
@@ -538,7 +466,6 @@ class _AccountHero extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      padding: const EdgeInsetsDirectional.fromSTEB(18, 16, 18, 18),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.vertical(
           bottom: Radius.circular(cardRadius),
@@ -549,49 +476,55 @@ class _AccountHero extends StatelessWidget {
           colors: <Color>[Color(0xFF0E2240), Color(0xFF163355)],
         ),
       ),
-      child: Row(
-        children: <Widget>[
-          Container(
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 0.18),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: const Icon(
-              Icons.person_rounded,
-              color: Colors.white,
-              size: 22,
-            ),
-          ),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  appName,
-                  style: theme.textTheme.labelLarge?.copyWith(
-                    color: Colors.white70,
-                    fontWeight: FontWeight.w700,
-                  ),
+      child: SafeArea(
+        bottom: false,
+        child: Padding(
+          padding: const EdgeInsetsDirectional.fromSTEB(18, 16, 18, 18),
+          child: Row(
+            children: <Widget>[
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.18),
+                  borderRadius: BorderRadius.circular(12),
                 ),
-                const SizedBox(height: 2),
-                Text(
-                  title,
-                  style: theme.textTheme.titleLarge?.copyWith(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w800,
-                  ),
+                child: const Icon(
+                  Icons.person_rounded,
+                  color: Colors.white,
+                  size: 22,
                 ),
-              ],
-            ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      appName,
+                      style: theme.textTheme.labelLarge?.copyWith(
+                        color: Colors.white70,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      title,
+                      style: theme.textTheme.titleLarge?.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              IconButton(
+                onPressed: onMenuPressed,
+                visualDensity: VisualDensity.compact,
+                icon: const Icon(Icons.more_vert_rounded, color: Colors.white),
+              ),
+            ],
           ),
-          IconButton(
-            onPressed: onMenuPressed,
-            visualDensity: VisualDensity.compact,
-            icon: const Icon(Icons.more_vert_rounded, color: Colors.white),
-          ),
-        ],
+        ),
       ),
     );
   }

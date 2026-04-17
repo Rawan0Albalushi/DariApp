@@ -203,6 +203,24 @@ abstract class AppLocalizations {
   /// **'For Rent'**
   String get forRent;
 
+  /// No description provided for @propertyNameLuxuryApartment.
+  ///
+  /// In en, this message translates to:
+  /// **'Luxury Apartment'**
+  String get propertyNameLuxuryApartment;
+
+  /// No description provided for @propertyNameModernVilla.
+  ///
+  /// In en, this message translates to:
+  /// **'Modern Villa'**
+  String get propertyNameModernVilla;
+
+  /// No description provided for @propertyNameFamilyHouse.
+  ///
+  /// In en, this message translates to:
+  /// **'Family House'**
+  String get propertyNameFamilyHouse;
+
   /// No description provided for @beds.
   ///
   /// In en, this message translates to:
@@ -212,7 +230,7 @@ abstract class AppLocalizations {
   /// No description provided for @baths.
   ///
   /// In en, this message translates to:
-  /// **'Bath'**
+  /// **'Baths'**
   String get baths;
 
   /// No description provided for @bottomHome.
@@ -460,6 +478,132 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'More options opened'**
   String get accountMoreOpened;
+
+  /// No description provided for @propertyDetailsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Property Details'**
+  String get propertyDetailsTitle;
+
+  /// No description provided for @priceStartingFrom.
+  ///
+  /// In en, this message translates to:
+  /// **'Starting from'**
+  String get priceStartingFrom;
+
+  /// No description provided for @contactAgent.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact Agent'**
+  String get contactAgent;
+
+  /// No description provided for @propertyOverviewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Overview'**
+  String get propertyOverviewTitle;
+
+  /// No description provided for @propertyOverviewText.
+  ///
+  /// In en, this message translates to:
+  /// **'A premium unit in a strategic location, designed for daily comfort with practical interior distribution and close access to essential services.'**
+  String get propertyOverviewText;
+
+  /// No description provided for @featuresLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Features'**
+  String get featuresLabel;
+
+  /// No description provided for @amenityPool.
+  ///
+  /// In en, this message translates to:
+  /// **'Swimming Pool'**
+  String get amenityPool;
+
+  /// No description provided for @amenityParking.
+  ///
+  /// In en, this message translates to:
+  /// **'Parking'**
+  String get amenityParking;
+
+  /// No description provided for @amenityGym.
+  ///
+  /// In en, this message translates to:
+  /// **'Gym'**
+  String get amenityGym;
+
+  /// No description provided for @amenitySecurity.
+  ///
+  /// In en, this message translates to:
+  /// **'24/7 Security'**
+  String get amenitySecurity;
+
+  /// No description provided for @bookVisit.
+  ///
+  /// In en, this message translates to:
+  /// **'Book a Visit'**
+  String get bookVisit;
+
+  /// No description provided for @propertyAreaValue.
+  ///
+  /// In en, this message translates to:
+  /// **'145 m²'**
+  String get propertyAreaValue;
+
+  /// No description provided for @allPropertiesPageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'All properties'**
+  String get allPropertiesPageTitle;
+
+  /// No description provided for @viewAllProperties.
+  ///
+  /// In en, this message translates to:
+  /// **'View all'**
+  String get viewAllProperties;
+
+  /// No description provided for @allPropertiesSearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search by name or district'**
+  String get allPropertiesSearchHint;
+
+  /// No description provided for @filterAllProperties.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get filterAllProperties;
+
+  /// No description provided for @districtAlMouj.
+  ///
+  /// In en, this message translates to:
+  /// **'Al Mouj, Muscat'**
+  String get districtAlMouj;
+
+  /// No description provided for @districtAlKhuwair.
+  ///
+  /// In en, this message translates to:
+  /// **'Al Khuwair, Muscat'**
+  String get districtAlKhuwair;
+
+  /// No description provided for @districtQurum.
+  ///
+  /// In en, this message translates to:
+  /// **'Qurum, Muscat'**
+  String get districtQurum;
+
+  /// No description provided for @districtBausher.
+  ///
+  /// In en, this message translates to:
+  /// **'Bausher, Muscat'**
+  String get districtBausher;
+
+  /// No description provided for @allPropertiesEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No properties match your filters or search.'**
+  String get allPropertiesEmpty;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

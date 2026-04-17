@@ -63,6 +63,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get forRent => 'للإيجار';
 
   @override
+  String get propertyNameLuxuryApartment => 'شقة فاخرة';
+
+  @override
+  String get propertyNameModernVilla => 'فيلا عصرية';
+
+  @override
+  String get propertyNameFamilyHouse => 'منزل عائلي';
+
+  @override
   String get beds => 'غرف';
 
   @override
@@ -190,4 +199,68 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get accountMoreOpened => 'تم فتح خيارات إضافية';
+
+  @override
+  String get propertyDetailsTitle => 'تفاصيل العقار';
+
+  @override
+  String get priceStartingFrom => 'السعر يبدأ من';
+
+  @override
+  String get contactAgent => 'تواصل مع الوسيط';
+
+  @override
+  String get propertyOverviewTitle => 'نظرة عامة';
+
+  @override
+  String get propertyOverviewText => 'وحدة سكنية مميزة في موقع استراتيجي، مصممة لراحة يومية مع توزيع داخلي عملي وقرب من الخدمات الأساسية.';
+
+  @override
+  String get featuresLabel => 'المزايا';
+
+  @override
+  String get amenityPool => 'مسبح';
+
+  @override
+  String get amenityParking => 'مواقف سيارات';
+
+  @override
+  String get amenityGym => 'نادي رياضي';
+
+  @override
+  String get amenitySecurity => 'أمن 24/7';
+
+  @override
+  String get bookVisit => 'حجز';
+
+  @override
+  String get propertyAreaValue => '145 م²';
+
+  @override
+  String get allPropertiesPageTitle => 'كل العقارات';
+
+  @override
+  String get viewAllProperties => 'عرض الكل';
+
+  @override
+  String get allPropertiesSearchHint => 'ابحث بالاسم أو الحي';
+
+  @override
+  String get filterAllProperties => 'الكل';
+
+  @override
+  String get districtAlMouj => 'الموج، مسقط';
+
+  @override
+  String get districtAlKhuwair => 'الخوير، مسقط';
+
+  @override
+  String get districtQurum => 'القرم، مسقط';
+
+  @override
+  String get districtBausher => 'بوشر، مسقط';
+
+  @override
+  String get allPropertiesEmpty =>
+      'لا توجد عقارات مطابقة للتصفية أو البحث.';
 }
