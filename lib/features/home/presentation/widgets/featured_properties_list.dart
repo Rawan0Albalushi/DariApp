@@ -9,6 +9,8 @@ class FeaturedPropertyData {
     required this.badgeLabel,
     required this.bedrooms,
     required this.bathrooms,
+    required this.areaLabel,
+    required this.parking,
     required this.imageGradient,
   });
 
@@ -18,6 +20,8 @@ class FeaturedPropertyData {
   final String badgeLabel;
   final String bedrooms;
   final String bathrooms;
+  final String areaLabel;
+  final String parking;
   final List<Color> imageGradient;
 }
 

@@ -21,6 +21,8 @@ List<FeaturedPropertyData> buildPropertyCatalog(AppLocalizations l10n) {
     required String bedrooms,
     required String bathrooms,
     required int gradientIndex,
+    String areaLabel = '120 m²',
+    String parking = '1',
   }) {
     return FeaturedPropertyData(
       title: title,
@@ -29,6 +31,8 @@ List<FeaturedPropertyData> buildPropertyCatalog(AppLocalizations l10n) {
       badgeLabel: badgeLabel,
       bedrooms: bedrooms,
       bathrooms: bathrooms,
+      areaLabel: areaLabel,
+      parking: parking,
       imageGradient: gradients[gradientIndex % gradients.length],
     );
   }

@@ -55,6 +55,8 @@ class _HomePageState extends State<HomePage> {
         badgeLabel: l10n.forRent,
         bedrooms: '2',
         bathrooms: '2',
+        areaLabel: '95 m²',
+        parking: '1',
         imageGradient: const [Color(0xFF5D89B3), Color(0xFF1E3A5F)],
       ),
       FeaturedPropertyData(
@@ -64,6 +66,8 @@ class _HomePageState extends State<HomePage> {
         badgeLabel: l10n.forSale,
         bedrooms: '3',
         bathrooms: '1',
+        areaLabel: '210 m²',
+        parking: '2',
         imageGradient: const [Color(0xFFB68C60), Color(0xFF6B4E2E)],
       ),
       FeaturedPropertyData(
@@ -73,6 +77,8 @@ class _HomePageState extends State<HomePage> {
         badgeLabel: l10n.forSale,
         bedrooms: '4',
         bathrooms: '3',
+        areaLabel: '280 m²',
+        parking: '2',
         imageGradient: const [Color(0xFF8DA3B8), Color(0xFF3F5A74)],
       ),
     ];
